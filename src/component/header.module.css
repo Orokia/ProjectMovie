@@ -1,0 +1,45 @@
+/* header.module.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  background-color: #1e293b;
+  color: white;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navcontainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navcontainer a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: color 0.3s ease;
+}
+
+.navcontainer a:hover {
+  color: #38bdf8;
+}
+
+.navmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
