@@ -46,7 +46,11 @@ console.log(Array.isArray(resultats));
         <h2 className={style.title}>Recherche de films</h2>
         <form action="" className={style.form} onSubmit={(e)=> {e.preventDefault();}}>
           <input type="text" className={style.input} id="recherche" name="recherche"  placeholder="Rechercher un film..." onChange={handleChange}  />
-           <button >Rechercher</button>
+          <div className={style.pagination}>
+             <button >Rechercher</button>
+
+          </div>
+          
         
            
 
@@ -63,17 +67,34 @@ console.log(Array.isArray(resultats));
        </div>
 
        </main>
-        { page<pageMax &&
-          <button type="button" onClick={() => setPage(page + 1)}>
-           Suivant
-          </button>
-        }
-        <button
-  type="button"
-  onClick={() => setPage(page - 1)}
->
-  Précédent
-</button>
+        <div className={style.pagination}>
+  {page > 1 && (
+    <button
+      type="button"
+      onClick={() => setPage(page - 1)}
+    >
+      ← Précédent
+    </button>
+  )}
+  { page > 1 && (
+    <span>
+    Page {page} / {pageMax}
+  </span>
+  )
+
+  }
+  
+
+  {page < pageMax && (
+    <button
+      type="button"
+      onClick={() => setPage(page + 1)}
+    >
+      Suivant →
+    </button>
+  )}
+</div>
+       
        </>
 
  

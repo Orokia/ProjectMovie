@@ -40,9 +40,11 @@ const RechercheSeries= ()=>{
       <div >
         <h2 className={style.title}>Recherche de series</h2>
         <form action="" className={style.form} onSubmit={(e)=> {e.preventDefault();}}>
-          <input type="text" className={style.input} id="recherche" name="recherche"  placeholder="Rechercher un film..." onChange={handleChange}  />
-           <button >Rechercher</button>
-
+          <input type="text" className={style.input} id="recherche" name="recherche"  placeholder="Rechercher un series..." onChange={handleChange}  />
+            <div className={style.pagination}>
+              <button >Rechercher</button>
+           
+            </div>
         
     <div className={style.cardsContainer}>
      {resultats?.map((film) => (
@@ -57,17 +59,33 @@ const RechercheSeries= ()=>{
        </div>
 
        </main>
-        { page<pageMax &&
-          <button type="button" onClick={() => setPage(page + 1)}>
-           Suivant
-          </button>
-        }
-        <button
-  type="button"
-  onClick={() => setPage(page - 1)}
->
-  Précédent
-</button>
+            <div className={style.pagination}>
+         {page > 1 && (
+           <button
+             type="button"
+             onClick={() => setPage(page - 1)}
+           >
+             ← Précédent
+           </button>
+         )}
+         { page > 1 && (
+           <span>
+           Page {page} / {pageMax}
+         </span>
+         )
+       
+         }
+         
+       
+         {page < pageMax && (
+           <button
+             type="button"
+             onClick={() => setPage(page + 1)}
+           >
+             Suivant →
+           </button>
+         )}
+       </div>
         </>
     )
 }
