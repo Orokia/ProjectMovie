@@ -70,3 +70,42 @@
 .button:hover {
   background-color: #0ea5e9;
 }
+.favoriteButton {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #ef4444;
+  color: white;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.favoriteButton:hover {
+  background-color: #dc2626;
+}
+
+.success {
+  margin-top: 10px;
+  color: #22c55e;
+  text-align: center;
+  font-weight: bold;
+}
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}

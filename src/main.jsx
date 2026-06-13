@@ -8,6 +8,7 @@ import PageAccueil from './pages/PageAccueil.jsx';
 import RechercheFilms from './pages/rechercheFilms.jsx';
 import DetailFilms from './pages/DetailFilm.jsx';
 import RechercheSeries from './pages/RechercheSeries.jsx';
+import PageFavoris from './pages/PageFavories.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/series",
         element: <RechercheSeries/>
+      },
+      {
+        path: "/favories",
+        element: <PageFavoris/>
       }
     
 

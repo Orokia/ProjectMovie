@@ -1,6 +1,19 @@
 import style from "./cardFilms.module.css" 
 import { Link } from "react-router";
+import { addFavoriteMovie } from "../service/ApiFavories";
+import { useState } from "react";
 const CardFilms=({film})=>{
+  const [message, setMessage] = useState("");
+  const handleFavorite = async () => {
+  await addFavoriteMovie(film);
+
+  setMessage("Film ajouté aux favoris !");
+
+  setTimeout(() => {
+    setMessage("");
+  }, 2000);
+};
+
     return(
         <>
         <div className={style.card}>
@@ -25,6 +38,14 @@ const CardFilms=({film})=>{
           state={{ film }}
         >
           <button className={style.button}>Détail du film</button>
+          <button className={style.favoriteButton} onClick={handleFavorite} >
+          ❤️ Ajouter aux favoris
+          </button>
+          {message && (
+  <p className={style.success}>
+    {message}
+  </p>
+)}
         </Link>
       </div>
     </div>

@@ -11,7 +11,7 @@ const Header=()=>{
               <h1 ></h1>
               <Link to={{ pathname: "/films"}}> Films</Link>
                <Link to={{ pathname: "/series"}}> Series</Link>
-
+               <Link to={{ pathname: "/favories"}}> Favories</Link>
 
           <ul className={style.navmenu}>
              
